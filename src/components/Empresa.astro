@@ -1,23 +1,11 @@
 ---
 const {title, descrip, img} = Astro.props;
 ---
-<div class="main">
+<div class="flex items-center justify-center flex-col">
     
-<h2 class="span2">{title}</h2>
-<p>{descrip}</p>
+<h2>{title}</h2>
 <img src={img} alt={`imagen de ${title}`} height="50px" width="50px">
+<p>{descrip}</p>
 
 </div>
 
-
-<style>
-    .main{
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        
-    }
-
-    .span2{
-        grid-column: span 2;
-    }
-</style>
