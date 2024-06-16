@@ -1,11 +1,13 @@
 ---
 const {title, descrip, img} = Astro.props;
 ---
-<div class="flex items-center justify-center flex-col">
     
-<h2>{title}</h2>
-<img src={img} alt={`imagen de ${title}`} height="50px" width="50px">
-<p>{descrip}</p>
-
+<div class="flex m-5 p-5 border rounded-t-lg shadow-2xl shadow-second">
+   
+    <div>    <h2 class="text-lg font-sans">{title}</h2>
+        <p class="font-sans text-left">{descrip}</p>
+    </div>
+    
+    <img src={img} alt={`imagen de ${title}`} height="50%" width="30%">
+    
 </div>
-
