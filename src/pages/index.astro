@@ -2,7 +2,6 @@
 import Empresa from "../components/Empresa.astro";
 import { empresas } from "../contents/Empresa";
 
-
 ---
 
 <html lang="en">
@@ -13,24 +12,53 @@ import { empresas } from "../contents/Empresa";
 		<meta name="generator" content={Astro.generator} />
 		<title>Empresas</title>
 	</head>
+	
 	<body class="bg-principal ">
-		<img class="m-auto p-5" src="https://isft75.edu.ar/wp-content/uploads/2016/09/logo-transparente.png" alt="icono del instituto">
-		<section >
-			{empresas.map((emp)=>(
-				<Empresa
-				title = {emp.nombre}
-				descrip = {emp.descrip}
-				img = {emp.img}
-				linkPage = {emp.linkPage}
-				linkFace = {emp.linkFace}
-				linkIg = {emp.linkIg}
-
-				/>
-			))}
-		</section>
+		<header>
+			<img class="m-auto p-5" src="https://isft75.edu.ar/wp-content/uploads/2016/09/logo-transparente.png" alt="icono del instituto">
+		</header>
+		<main class="flex flex-col">
+			<button class="hidden m-auto p-2 bg-ter self-center rounded-full text-principal hover:bg-second">Inicar Trivia</button>
+			<section id="emps">
+				{empresas.map((emp)=>(
+					<Empresa
+					title = {emp.nombre}
+					descrip = {emp.descrip}
+					img = {emp.img}
+					linkPage = {emp.linkPage}
+					linkFace = {emp.linkFace}
+					linkIg = {emp.linkIg}
+					/>
+				))}
+			</section>
+			<section id="trivia" class="hidden">
+				
+			</section>
+		</main>
+		
+	<footer class="text-center text-ter">
+		<p>Grupo ACETA</p>
+	</footer>
 	</body>
 </html>
 
+<script>
+	const botton = document.querySelector('button');
+	var trivia = document.querySelector('#trivia');
+	var emps= document.querySelector('#emps');
+	
+	if(botton) botton.addEventListener('click', () => {
+		if(botton.textContent=="Ver empresas"){
+			botton.textContent =	"Inicar Trivia"
+			trivia?.classList.add('hidden')
+			emps?.classList.remove('hidden')
+			return
+		}
+		botton.textContent = "Ver empresas"	
+		emps?.classList.add('hidden')
+		trivia?.classList.remove('hidden')
+    });
+</script>
 
 <style>
 
