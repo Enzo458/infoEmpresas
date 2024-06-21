@@ -1,6 +1,7 @@
 ---
 import Empresa from "../components/Empresa.astro";
 import { empresas } from "../contents/Empresa";
+import Trivia from "../components/Trivia.svelte";
 
 ---
 
@@ -18,7 +19,7 @@ import { empresas } from "../contents/Empresa";
 			<img class="m-auto p-5" src="https://isft75.edu.ar/wp-content/uploads/2016/09/logo-transparente.png" alt="icono del instituto">
 		</header>
 		<main class="flex flex-col">
-			<button class="hidden m-auto p-2 bg-ter self-center rounded-full text-principal hover:bg-second">Inicar Trivia</button>
+			<button class="m-auto p-2 bg-ter self-center rounded-full text-principal hover:bg-second">Inicar Trivia</button>
 			<section id="emps">
 				{empresas.map((emp)=>(
 					<Empresa
@@ -32,7 +33,7 @@ import { empresas } from "../contents/Empresa";
 				))}
 			</section>
 			<section id="trivia" class="hidden">
-				trivia
+				<Trivia client:load/>	
 			</section>
 		</main>
 		
