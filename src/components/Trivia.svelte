@@ -2,7 +2,7 @@
 
     import {preguntas} from "../contents/Preguntas";
     // Datos de ejemplo (puedes cargarlos desde un archivo externo)
-    const triviaData = preguntas.sort(() => Math.random() - 0.5).splice(0,5);
+    let triviaData = preguntas.sort(() => Math.random() - 0.5).splice(0,5);
   
     let currentQuestionIndex = 0;
     let userScore = 0;
@@ -21,6 +21,7 @@
     function resetTrivia(){
       currentQuestionIndex = 0;
       userScore = 0;
+      triviaData =  preguntas.sort(() => Math.random() - 0.5).splice(0,5);
     }
   </script>
   
@@ -36,8 +37,8 @@
     {:else}
       <div class="border-second flex flex-col items-center gap-2">
         <h1 class="text-lg font-sans font-bold  text-second" >¡Trivia completada!</h1>
-        <p class="font-sans text-lef text-ter">Tu puntaje final es: {userScore} / {triviaData.length}</p>
-        <button class="p-5 border border-second rounded-full" on:click={()=>resetTrivia()}>Jugar de nuevo</button>
+        <p class="font-sans text-lef text-ter">Tu puntaje final es: <span class="text-second font-bold">{userScore} / {triviaData.length}</span></p>
+        <button class="p-5 border border-second rounded-full text-second" on:click={()=>resetTrivia()}>Jugar de nuevo</button>
       </div>
     {/if}
   </main>
