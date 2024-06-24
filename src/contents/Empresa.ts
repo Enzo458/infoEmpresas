@@ -1,6 +1,6 @@
 export const empresas= [
     {
-        nombre: "PREMIN",
+        nombre: "PRE MIN",
         descrip: "Se dedica a la producción y comercialización de productos para nutrición animal.        ",
         img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlhMplmRTrvfDo1-OxaZjp2MNXmJtKGEX9uw&s",      
         linkPage: "http://premin.com.ar/",
